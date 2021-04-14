@@ -6,18 +6,19 @@
 @media (min-width: 576px) and (max-width: 991.98px) and (orientation: portrait){
 
 body{
-  background-image: url(img/background1.png);
-  background-repeat: no-repeat;
+  background-image: url(img/background2.png);
   font-family: 'Nunito', sans-serif;
 }
 
 .home{
+  background-image: url(img/background1.png);
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  
+  aligPn-items: center;
 }
+
 .logo-home{
   margin-top: 5%;
 }
@@ -33,34 +34,136 @@ body{
   margin-top: 7vh;
   height: 228px;
 }
+
 .walmart-icon{
   margin-left: 94%;
 }
 
-/* Pantalla de credential */
+
+/* --------------Pantalla de credential-------------- */
 
 .credential{
+  background-image: url(img/background1.png);
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
+.credential-text{
+  font-size: 36px;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-align: center;
+  width: 600px;
+  margin-top: 6%;
+}
 
+.credential-img{
+  height: 350px;
+  margin-top: 6%;
+}
 
+/* --------------Modal de validación de partner-------------- */
 
+.modal-background{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s; 
+}
 
+.modal{
+  display: flex;
+  flex-direction: column;
+}
 
+.modal-button{
+  color: #FFFFFF;
+  background-color: #DE1C24;
+  width: 180px;
+  height: 65px;
+  border-radius: 50px;
+  font-size: 30px;
+  margin-top: 8%;
+}
 
+.text-modal{
+  font-size: 32px;
+}
 
+.background-active{
+  visibility: visible;
+  opacity: 1;
+}
 
+.modal{
+  position: relative;
+  background-color: #ffffff;
+  width: 77%;
+  height: 32%;
+  border-radius: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-close{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 30px;
+}
 
+/* --------------Pantalla de shopcart-------------- */
 
+.shopcart-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4%;
+}
 
+.partner-name{
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+}
 
+.items{
+  color: #0071CE;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 30px;
+  margin-top: 15%;
+}
+.product-container{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 
-
+.the-button{
+  background-color: #ffffff;
+  border: solid 1px grey;
+  outline: none;
+  
+}
+.price{
+  color: red;
+}
 
 }
