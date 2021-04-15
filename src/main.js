@@ -1,4 +1,5 @@
 import { home } from './lib/view/templateHome.js';
+// import { transfer } from './lib/view/templateTransfer.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {

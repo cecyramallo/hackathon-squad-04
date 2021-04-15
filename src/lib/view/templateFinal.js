@@ -5,7 +5,7 @@ export const final = () => {
     <div class="final" id="final-screen">
       <div class="final-header">
         <img src="img/logocm-white.png" alt="" />
-        <h2 class="partner-name">Hola, Gabriela Morales</h2>
+        <h2 class="partner-name">Hola, Freddy Jeanty</h2>
       </div>
       <div class="final-container">
         <h2 class="final-title">Has finalizado tu compra con éxito</h2>
