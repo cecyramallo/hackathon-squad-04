@@ -76,7 +76,7 @@ export const shopcart = () => {
     <p class='empty-cart-text-modal'>¿Estás seguro que deseas vaciar el carrito?<br></p>
     <p class='empty-cart-text-modal2'>No podrás deshacer esta opción</p>
     <div class="empty-cart-modal-button-container">
-      <button class='empty-cart-modal-button' id='yesEmptyCart' onclick="location.reload()">SI</button>
+      <button class='empty-cart-modal-button' id='yesEmptyCart'>SI</button>
       <button class='empty-cart-modal-button' id='noEmptyCart'>NO</button>
     </div>
   </div>
