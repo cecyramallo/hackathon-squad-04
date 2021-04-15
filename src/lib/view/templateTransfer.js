@@ -78,12 +78,11 @@ export const transfer = () => {
     location.assign('');
   });
 
-// -------------Cambio a template final-------------------------------------------------------
-const goToFinal2 = divTransfer.querySelector('#closeModalTransferButton');
-goToFinal2.addEventListener('click', () => {
-  location.assign('#final');
-});
-
+  // -------------Cambio a template final-------------------------------------------------------
+  const goToFinal2 = divTransfer.querySelector('#closeModalTransferButton');
+  goToFinal2.addEventListener('click', () => {
+    location.assign('#final');
+  });
 
   return divTransfer;
 };
