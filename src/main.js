@@ -1,12 +1,11 @@
-// import { home } from './lib/view/templateHome.js';
-import { shopcart } from './lib/view/templateShopcart.js';
+import { home } from './lib/view/templateHome.js';
+// import { transfer } from './lib/view/templateTransfer.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
-  document.getElementById('root').appendChild(shopcart());
+  document.getElementById('root').appendChild(home());
   if ('onhashchange' in window) {
     window.onhashchange = () => {
-      // console.log(1, window.location.hash);
       changeRoute(window.location.hash);
     };
   }
