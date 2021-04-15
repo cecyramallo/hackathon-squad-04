@@ -1,9 +1,9 @@
 // import { home } from './lib/view/templateHome.js';
-import { shopcart } from './lib/view/templateShopcart.js';
+import { pay } from './lib/view/templatePay.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
-  document.getElementById('root').appendChild(shopcart());
+  document.getElementById('root').appendChild(pay());
   if ('onhashchange' in window) {
     window.onhashchange = () => {
       // console.log(1, window.location.hash);
