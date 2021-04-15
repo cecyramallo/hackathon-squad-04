@@ -5,7 +5,7 @@ export const shopcart = () => {
   <div class="shopcart" id="shopcart-screen">
   <div class="shopcart-header">
     <img src="img/logocm-white.png" alt="" />
-    <h2 class="partner-name">Hola, Gabriela Morales</h2>
+    <h2 class="partner-name">Hola, Freddy Jeanty</h2>
   </div>
 
   <div>
@@ -134,7 +134,6 @@ export const shopcart = () => {
     divShopcart.querySelector('#totalPrice').innerHTML = '';
   });
 
-
   // -------------abrir modal de cancelar compra--------------------------------------------------
 
   const modalCancelPurchase = divShopcart.querySelector('#cancelPurchase');
@@ -149,12 +148,11 @@ export const shopcart = () => {
     modalBackgroundCancelPurchase.classList.remove('cancel-purchase-background-active');
   });
 
-  // -------------Cambio a template credential-------------------------------------------------------
-  const goToCredential= divShopcart.querySelector('#yesCancelPurchase');
-  goToCredential.addEventListener('click', () => {
-    location.assign('#credential');
+  // -------------Cambio a template home-------------------------------------------------------
+  const goToHome= divShopcart.querySelector('#yesCancelPurchase');
+  goToHome.addEventListener('click', () => {
+    location.assign('');
   });
-
 
   // Declaramos la data que usaremos
   const items = [
@@ -172,9 +170,34 @@ export const shopcart = () => {
   const button4 = divShopcart.querySelector('#theButton4');
 
   // Con el método map sumamos el valor del precio de los productos
-  let total = 0;
-  const sumaPrecios = items.map((item) => (total += item.precio));
-  console.log(total);
+  // let total = 0;
+  // const sumaPrecios = items.map((item) => (total += item.precio));
+  // console.log(total);
+
+  // Con el método map sumamos el valor del precio de los productos
+  // let total = items[0].precio;
+  // let total = 0;
+  // const sumaPrecios = items.map((item) => (total += items[0].precio ));
+  // console.log('item', items[0].precio)
+  // console.log(total);
+
+  // Con el método map sumamos el valor del precio de los productos
+  // let total2 = items[1].precio;
+  // const sumaPrecios2 = items.map((item) => (total += items[1].precio ));
+  // console.log('item', items[1].precio)
+  // console.log(total2);
+
+  // Con el método map sumamos el valor del precio de los productos
+  // let total3 = items[2].precio;
+  // const sumaPrecios3 = items.map((item) => (total += items[2].precio ));
+  // console.log('item', items[2].precio)
+  // console.log(total3);
+
+  // Con el método map sumamos el valor del precio de los productos
+  // let total4 = items[3].precio;
+  // const sumaPrecios4 = items.map((item) => (total += items[3].precio));
+  // console.log('item', items[3].precio)
+  // console.log(total4);
 
   // Le agregamos el evento a los botones para que nos pinten la info de la data
   const addItem = button.addEventListener('click', () => {
@@ -192,6 +215,7 @@ export const shopcart = () => {
       
     </div>
     `;
+    divShopcart.querySelector('#totalPrice').innerHTML = '$' + '6200';
   });
 
   const addItem2 = button2.addEventListener('click', () => {
@@ -208,6 +232,7 @@ export const shopcart = () => {
       </div>
     </div>
     `;
+    divShopcart.querySelector('#totalPrice').innerHTML = '$' + '11480';
   });
 
   const addItem3 = button3.addEventListener('click', () => {
@@ -224,6 +249,7 @@ export const shopcart = () => {
       </div>
     </div>
     `;
+    divShopcart.querySelector('#totalPrice').innerHTML = '$' + '20976';
   });
 
   const addItem4 = button4.addEventListener('click', () => {
@@ -242,7 +268,7 @@ export const shopcart = () => {
     `;
 
     // Aquí pintamos el total de la suma del valor de los productos que hicimos con el método map
-    divShopcart.querySelector('#totalPrice').innerHTML = '$' + total;
+    divShopcart.querySelector('#totalPrice').innerHTML = '$' + '45926';
   });
 
   // -------------Cambio a template Pay-----------------------------------------------------------------

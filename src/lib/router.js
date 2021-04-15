@@ -3,6 +3,7 @@ import { credential } from './view/templateCredential.js';
 import { shopcart } from './view/templateShopcart.js';
 import { pay } from './view/templatePay.js';
 import { final } from './view/templateFinal.js';
+import { transfer } from './view/templateTransfer.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -19,6 +20,9 @@ const showTemplate = (hash) => {
       break;
     case '#pay':
       containerRoot.appendChild(pay());
+      break;
+    case '#transfer':
+      containerRoot.appendChild(transfer());
       break;
     case '#final':
       containerRoot.appendChild(final());
@@ -44,6 +48,9 @@ export const changeRoute = (hash) => {
     return showTemplate(hash);
   }
   if (hash === '#final') {
+    return showTemplate(hash);
+  }
+  if (hash === '#transfer') {
     return showTemplate(hash);
   }
 };

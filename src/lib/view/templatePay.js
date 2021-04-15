@@ -5,14 +5,14 @@ export const pay = () => {
   <div class='pay' id='pay-screen'>
     <div class="shopcart-header">
       <img src="img/logocm-white.png" alt="" />
-      <h2 class="partner-name">Hola, Gabriela Morales</h2>
+      <h2 class="partner-name">Hola, Freddy Jeanty</h2>
      </div>
     <div class="pay-container">
       <h2 class="pay-title">Selecciona tu medio de pago</h2>
     </div>
     <div class="pay-buttons-container">
       <img src="img/Redcompra.png" alt="redcompra" type='button' class="pay-buttons" id="redcompra">
-      <img src="img/Transfer.png" alt="transfer" type='button'class="pay-buttons">
+      <img src="img/Transfer.png" alt="transfer" type='button'class="pay-buttons" id="transfer">
     </div>
     <div class="pay-footer">
       <a class="cancel-purchase" id="cancelPurchase">Cancelar compra</a>
@@ -43,7 +43,7 @@ export const pay = () => {
       <div class="change-modal-content2" id="changeModalContent2">
         <div class="do-the-pay">
           <p class="do-the-pay-text">Realiza el pago</p>
-          <img src="img/pay-gif.png" alt="paygif" type="button" id="payGifButton" />
+          <img src="img/pay-gif.gif" alt="paygif" type="button" id="payGifButton" class="pay-gif-button" />
         </div>
         <span class="modal-close">&times;</span>
       </div>
@@ -51,7 +51,7 @@ export const pay = () => {
       <div class="change-modal-content3" id="changeModalContent3">
         <div class="loading">
           <p class="loading-text">Procesando</p>
-          <img src="img/loading.png" alt="loadinggif" type="button" id="loadingButton" />
+          <img src="img/loading.gif" alt="loadinggif" type="button" id="loadingButton" class="loading-gif-button"/>
         </div>
         <span class="modal-close">&times;</span>
       </div>
@@ -67,7 +67,7 @@ export const pay = () => {
       <div class="change-modal-content5" id="changeModalContent5">
       <div class="receipt">
         <p class="receipt-text">No olvides retirar tu boleta</p>
-        <img src="img/receipt.png" alt="receiptgif" type="button" id="receiptButton" />
+        <img src="img/receipt.gif" alt="receiptgif" type="button" id="receiptButton" class="receipt-button" />
       </div>
       <span class="modal-close">&times;</span>
     </div>
@@ -131,18 +131,16 @@ export const pay = () => {
     modalBackgroundCancelPurchase.classList.remove('cancel-purchase-background-active');
   });
 
-  // -------------Cambio a template credential-------------------------------------------------------
-  const goToCredential = divPay.querySelector('#yesCancelPurchase');
-  goToCredential.addEventListener('click', () => {
-    location.assign('#credential');
+  // -------------Cambio a template home-------------------------------------------------------
+  const goToHome = divPay.querySelector('#yesCancelPurchase');
+  goToHome.addEventListener('click', () => {
+    location.assign('');
   });
 
   // -------------abrir modal de redcompra--------------------------------------------------
 
   const modalRedcompra = divPay.querySelector('#redcompra');
-  const modalBackgroundRedcompra = divPay.querySelector(
-    '.redcompra-modal-background'
-  );
+  const modalBackgroundRedcompra = divPay.querySelector('.redcompra-modal-background');
   const modalCloseRedcompra = divPay.querySelector('.modal-close');
 
   modalRedcompra.addEventListener('click', function () {
@@ -151,6 +149,12 @@ export const pay = () => {
 
   modalCloseRedcompra.addEventListener('click', function () {
     modalBackgroundRedcompra.classList.remove('redcompra-background-active');
+  });
+
+  // -------------Cambio a template Transfer-------------------------------------------------------
+  const goToTransfer = divPay.querySelector('#transfer');
+  goToTransfer.addEventListener('click', () => {
+    location.assign('#transfer');
   });
 
 // -------------Cambio a template final-------------------------------------------------------
