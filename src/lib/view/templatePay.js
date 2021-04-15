@@ -111,11 +111,11 @@ export const pay = () => {
 
   // ------------- cambiar a modal receipt--------------------------------------------------
 
-    const receipt = divPay.querySelector('#continueToReceiptButton');
-    receipt.addEventListener('click', () => {
-      changeModalContent4.style.display = 'none';
-      changeModalContent5.style.display = 'block';
-    });
+  const receipt = divPay.querySelector('#continueToReceiptButton');
+  receipt.addEventListener('click', () => {
+    changeModalContent4.style.display = 'none';
+    changeModalContent5.style.display = 'block';
+  });
 
   // -------------abrir modal de cancelar compra--------------------------------------------------
 
@@ -158,14 +158,5 @@ export const pay = () => {
   goToFinal.addEventListener('click', () => {
     location.assign('#final');
   });
-
-
-
-
-
-
-
-
-  
   return divPay;
 };
