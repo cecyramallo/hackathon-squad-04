@@ -35,5 +35,7 @@
   "engines": {
     "node": ">=10"
   },
-  "eslintIgnore": ["templateCredential.js"]
+  "eslintIgnore": [
+    "templateCredential.js"
+  ]
 }
