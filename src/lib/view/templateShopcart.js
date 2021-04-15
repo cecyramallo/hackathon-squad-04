@@ -15,26 +15,26 @@ export const shopcart = () => {
       <li>Precio</li>
     </ul>
     <div class="">
-      <div>
+      <div class="button-item-container">
         <button class="the-button" id="theButton">+</button>
         <p id="itemsContainer"></p>
       </div>
-      <div>
+      <div class="button-item-container">
         <button class="the-button" id="theButton2">+</button>
         <p id="itemsContainer2"></p>
       </div>
-      <div>
+      <div class="button-item-container">
         <button class="the-button" id="theButton3">+</button>
         <p id="itemsContainer3"></p>
       </div>
-      <div>
+      <div class="button-item-container">
         <button class="the-button" id="theButton4">+</button>
         <p id="itemsContainer4"></p>
       </div>
 
       <div class="footer">
         <div class="cancelPurchase">
-          <a href='' class="cancel-purchase">Cancelar compra</a>
+          <p class="cancel-purchase" id="cancelPurchase">Cancelar compra</p>
         </div>
         
         <div class="right">
@@ -44,7 +44,7 @@ export const shopcart = () => {
               <p class="total-price" id="totalPrice"></p>
               </br>
             </div>
-            <p class="empty-cart">Vaciar carrito</p>
+            <p class="empty-cart" id="EmptyShopcart">Vaciar carrito</p>
             </br>
             <button class="finish-shop-button" id='modalShopcartButton'>Finalizar pedido</button>
           </div>
@@ -60,12 +60,34 @@ export const shopcart = () => {
   </div>
 </div>
 
+<div class="cancel-purchase-modal-background">
+  <div class="cancel-purchase-modal">
+    <p class='cancel-purchase-text-modal'>¿Estás seguro que deseas cancelar la compra?</p>
+    <p class='cancel-purchase-text-modal2'>No podrás deshacer esta opción</p>
+    <div class="cancel-purchase-modal-button-container">
+    <button class='cancel-purchase-modal-button' id='yesCancelPurchase'>SI</button>
+    <button class='cancel-purchase-modal-button' id='noCancelPurchase'>NO</button>
+    </div>
+  </div>
+</div>
+
+<div class="empty-cart-modal-background">
+  <div class="empty-cart-modal">
+    <p class='empty-cart-text-modal'>¿Estás seguro que deseas vaciar el carrito?<br></p>
+    <p class='empty-cart-text-modal2'>No podrás deshacer esta opción</p>
+    <div class="empty-cart-modal-button-container">
+      <button class='empty-cart-modal-button' id='yesEmptyCart' onclick="location.reload()">SI</button>
+      <button class='empty-cart-modal-button' id='noEmptyCart'>NO</button>
+    </div>
+  </div>
+</div>
+
 </div>
 
       `;
   divShopcart.innerHTML = viewShopcart;
 
-  // -------------abrir modal --------------------
+  // -------------abrir modal de finalizar compra----------------------------------------------
   const modalButton = divShopcart.querySelector('#modalShopcartButton');
   const modalBackground = divShopcart.querySelector('.finish-purchase-modal-background');
   const modalClose = divShopcart.querySelector('#closeModalShopcartButton');
@@ -76,6 +98,46 @@ export const shopcart = () => {
 
   modalClose.addEventListener('click', function () {
     modalBackground.classList.remove('finish-purchase-background-active');
+  });
+
+  // -------------abrir modal de vaciar carrito--------------------------------------------------
+
+  const modalEmptyShopcart = divShopcart.querySelector('#EmptyShopcart');
+  const modalBackgroundEmptyShopcart = divShopcart.querySelector('.empty-cart-modal-background');
+  const modalCloseEmptyShopcart = divShopcart.querySelector('#noEmptyCart');
+
+  modalEmptyShopcart.addEventListener('click', function () {
+    modalBackgroundEmptyShopcart.classList.add('empty-cart-background-active');
+  });
+
+  modalCloseEmptyShopcart.addEventListener('click', function () {
+    modalBackgroundEmptyShopcart.classList.remove('empty-cart-background-active');
+  });
+
+  // -------------Recargar shopcar para vaciar carrito---------------------------------------------
+  const reloadShopcart = divShopcart.querySelector('#yesEmptyCart');
+  reloadShopcart.addEventListener('click', () => {
+    location.assign('#shopcart');
+  });
+
+  // -------------abrir modal de cancelar compra--------------------------------------------------
+
+  const modalCancelPurchase = divShopcart.querySelector('#cancelPurchase');
+  const modalBackgroundCancelPurchase = divShopcart.querySelector('.cancel-purchase-modal-background');
+  const modalCloseCancelPurchase = divShopcart.querySelector('#noCancelPurchase');
+
+  modalCancelPurchase.addEventListener('click', function () {
+    modalBackgroundCancelPurchase.classList.add('cancel-purchase-background-active');
+  });
+
+  modalCloseCancelPurchase.addEventListener('click', function () {
+    modalBackgroundCancelPurchase.classList.remove('cancel-purchase-background-active');
+  });
+
+  // -------------Cambio a template credential-------------------------------------------------------
+  const goToCredential= divShopcart.querySelector('#yesCancelPurchase');
+  goToCredential.addEventListener('click', () => {
+    location.assign('#credential');
   });
 
   // Declaramos la data que usaremos
@@ -121,9 +183,9 @@ export const shopcart = () => {
     <div class='item-container'>
       <div class='product-container'>
         <img src="img/product2.png" alt="">
-        <span class='product'>${items[1].producto}</span>
-        <span class='cuantity'>${items[1].cantidad}</span>
-        <span class='price'>$${items[1].precio}</span><br>
+        <span class='product2'>${items[1].producto}</span>
+        <span class='cuantity2'>${items[1].cantidad}</span>
+        <span class='price2'>$${items[1].precio}</span><br>
       </div>
       <div class='trash'>
         <img src="img/trash.png" alt="trash button" type='button'>
@@ -137,9 +199,9 @@ export const shopcart = () => {
     <div class='item-container'>
       <div class='product-container'>
         <img src="img/product3.png" alt="">
-        <span class='product'>${items[2].producto}</span>
-        <span class='cuantity'>${items[2].cantidad}</span>
-        <span class='price'>$${items[2].precio}</span><br>
+        <span class='product3'>${items[2].producto}</span>
+        <span class='cuantity3'>${items[2].cantidad}</span>
+        <span class='price3'>$${items[2].precio}</span><br>
       </div>
       <div class='trash'>
         <img src="img/trash.png" alt="trash button" type='button'>
@@ -153,9 +215,9 @@ export const shopcart = () => {
     <div class='item-container'>
       <div class='product-container'>
         <img src="img/product4.png" alt="">
-        <span class='product'>${items[3].producto}</span>
-        <span class='cuantity'>${items[3].cantidad}</span>
-        <span class='price'>$${items[3].precio}</span><br>
+        <span class='product4'>${items[3].producto}</span>
+        <span class='cuantity4'>${items[3].cantidad}</span>
+        <span class='price4'>$${items[3].precio}</span><br>
       </div>
       <div class='trash'>
         <img src="img/trash.png" alt="trash button" type='button'>
@@ -167,7 +229,7 @@ export const shopcart = () => {
     divShopcart.querySelector('#totalPrice').innerHTML = '$' + total;
   });
 
-  // -------------Cambio a template Pay--------------------
+  // -------------Cambio a template Pay-----------------------------------------------------------------
   const goToPay = divShopcart.querySelector('#closeModalShopcartButton');
   goToPay.addEventListener('click', () => {
     location.assign('#pay');
