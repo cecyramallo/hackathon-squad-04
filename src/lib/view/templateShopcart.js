@@ -76,7 +76,7 @@ export const shopcart = () => {
     <p class='empty-cart-text-modal'>¿Estás seguro que deseas vaciar el carrito?<br></p>
     <p class='empty-cart-text-modal2'>No podrás deshacer esta opción</p>
     <div class="empty-cart-modal-button-container">
-      <button class='empty-cart-modal-button' id='yesEmptyCart' onclick="location.reload()">SI</button>
+      <button class='empty-cart-modal-button' id='yesEmptyCart'>SI</button>
       <button class='empty-cart-modal-button' id='noEmptyCart'>NO</button>
     </div>
   </div>
@@ -105,6 +105,7 @@ export const shopcart = () => {
   const modalEmptyShopcart = divShopcart.querySelector('#EmptyShopcart');
   const modalBackgroundEmptyShopcart = divShopcart.querySelector('.empty-cart-modal-background');
   const modalCloseEmptyShopcart = divShopcart.querySelector('#noEmptyCart');
+  const modalCloseEmptyShopcart2 = divShopcart.querySelector('#yesEmptyCart');
 
   modalEmptyShopcart.addEventListener('click', function () {
     modalBackgroundEmptyShopcart.classList.add('empty-cart-background-active');
@@ -114,11 +115,25 @@ export const shopcart = () => {
     modalBackgroundEmptyShopcart.classList.remove('empty-cart-background-active');
   });
 
+  modalCloseEmptyShopcart2.addEventListener('click', function () {
+    modalBackgroundEmptyShopcart.classList.remove('empty-cart-background-active');
+  });
+
   // -------------Recargar shopcar para vaciar carrito---------------------------------------------
   const reloadShopcart = divShopcart.querySelector('#yesEmptyCart');
   reloadShopcart.addEventListener('click', () => {
     location.assign('#shopcart');
   });
+
+  const eraseButton = divShopcart.querySelector('#yesEmptyCart');
+  const eraseItems = eraseButton.addEventListener('click', () => {
+    divShopcart.querySelector('#item1').innerHTML = '';
+    divShopcart.querySelector('#item2').innerHTML = '';
+    divShopcart.querySelector('#item3').innerHTML = '';
+    divShopcart.querySelector('#item4').innerHTML = '';
+    divShopcart.querySelector('#totalPrice').innerHTML = '';
+  });
+
 
   // -------------abrir modal de cancelar compra--------------------------------------------------
 
@@ -139,6 +154,7 @@ export const shopcart = () => {
   goToCredential.addEventListener('click', () => {
     location.assign('#credential');
   });
+
 
   // Declaramos la data que usaremos
   const items = [
@@ -163,7 +179,7 @@ export const shopcart = () => {
   // Le agregamos el evento a los botones para que nos pinten la info de la data
   const addItem = button.addEventListener('click', () => {
     divShopcart.querySelector('#itemsContainer').innerHTML = `
-    <div class='item-container'>
+    <div class='item-container' id='item1'>
       <div class='product-container'>
         <img class='product-img' src="img/product1.png" alt="">
         <span class='product'>${items[0].producto}</span>
@@ -180,7 +196,7 @@ export const shopcart = () => {
 
   const addItem2 = button2.addEventListener('click', () => {
     divShopcart.querySelector('#itemsContainer2').innerHTML = `
-    <div class='item-container'>
+    <div class='item-container' id='item2'>
       <div class='product-container'>
         <img src="img/product2.png" alt="">
         <span class='product2'>${items[1].producto}</span>
@@ -196,7 +212,7 @@ export const shopcart = () => {
 
   const addItem3 = button3.addEventListener('click', () => {
     divShopcart.querySelector('#itemsContainer3').innerHTML = `
-    <div class='item-container'>
+    <div class='item-container' id='item3'>
       <div class='product-container'>
         <img src="img/product3.png" alt="">
         <span class='product3'>${items[2].producto}</span>
@@ -212,7 +228,7 @@ export const shopcart = () => {
 
   const addItem4 = button4.addEventListener('click', () => {
     divShopcart.querySelector('#itemsContainer4').innerHTML = `
-    <div class='item-container'>
+    <div class='item-container' id='item4'>
       <div class='product-container'>
         <img src="img/product4.png" alt="">
         <span class='product4'>${items[3].producto}</span>
