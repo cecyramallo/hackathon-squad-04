@@ -35,11 +35,5 @@
   "engines": {
     "node": ">=10"
   },
-<<<<<<< HEAD
-  "eslintIgnore": [
-    "templateCredential.js"
-  ]
-=======
   "eslintIgnore": ["templateCredential.js", "templateShopcart.js"]
->>>>>>> f502892009f43e6b534826baa58aa60652e6610d
 }
